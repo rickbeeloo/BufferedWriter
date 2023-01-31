@@ -24,6 +24,11 @@ function _write_to_buffer(writer::Writer, data::Vector{UInt8})
     end 
 end
 
+# This way we can also pass the stringview directly
+function Base.write(writer::Writer, stringview::T) where {T <: StringViews.DenseStringViewAndSub}
+    write(writer, stringview.data)
+end
+
 function Base.write(writer::Writer, data::Vector{UInt8})
     # If not full copy to buffer 
     if writer.filled_till + length(data) <= length(writer.arr)
