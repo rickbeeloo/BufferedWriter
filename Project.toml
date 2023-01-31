@@ -1,0 +1,4 @@
+name = "BufferedWriter"
+uuid = "ca8e820e-29ab-4dac-9453-3e7b7ed8a3cc"
+authors = ["codegodz <biobeeloo@gmail.com>"]
+version = "0.1.0"
